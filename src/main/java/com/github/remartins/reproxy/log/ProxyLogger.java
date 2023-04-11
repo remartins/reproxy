@@ -22,8 +22,6 @@ public class ProxyLogger implements ILogger {
 
     private final String VAL_REQUEST = "REQUEST";
     private final String VAL_RESPONSE = "RESPONSE";
-    private final String VAL_HTTP_TYPE = "HTTP REQUEST TYPE";
-    private final String VAL_BLOCK = "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
     private final String VAL_LINE = "-------------------------------------------------------------------------------------------------------------------------------------------------";
     private final String VAL_BREAK_LINE = "\n";
 
@@ -40,12 +38,14 @@ public class ProxyLogger implements ILogger {
         this.text.append(VAL_BREAK_LINE);
         this.text.append(VAL_BREAK_LINE);
 
+        String VAL_BLOCK = "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
         this.text.append(ansi().fg(GREEN).a(simpleDateFormat.format(new Date())).a(" ").a(VAL_BLOCK).reset().toString());
 
         this.text.append(VAL_BREAK_LINE);
         this.text.append(VAL_BREAK_LINE);
 
 
+        String VAL_HTTP_TYPE = "HTTP REQUEST TYPE";
         this.text.append(colored(VAL_HTTP_TYPE, httpType));
         this.text.append(VAL_BREAK_LINE);
         this.text.append(VAL_BREAK_LINE);
